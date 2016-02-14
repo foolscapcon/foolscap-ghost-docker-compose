@@ -1,0 +1,19 @@
+foolscap-ghost: &foolscap-ghost
+  container_name: foolscap-ghost
+  build: docker-ghost
+  ports:
+    - 2368:2368
+  environment:
+    NODE_ENV: development    
+    VIRTUAL_HOST: http://doubeal-mb.local
+    VIRTUAL_PORT: 2368
+    GHOST_CONTENT: /var/lib/ghost
+    GHOST_SOURCE: /usr/src/ghost
+    GHOST_SOURCE_CONTENT: /usr/src/ghost-content
+  volumes:
+    - ./content/:/usr/src/ghost-content/:ro
+    - ./content/themes/casper:/var/lib/ghost/themes/casper:ro
+    - ./content/themes/foolscap-ghost-theme:/var/lib/ghost/themes/foolscap-ghost-theme:ro
+
+
+

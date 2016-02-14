@@ -1,3 +1,9 @@
 [submodule "ghost"]
 	path = ghost
 	url = https://github.com/TryGhost/Ghost.git
+[submodule "docker-ghost"]
+	path = docker-ghost
+	url = https://github.com/foolscapcon/ghost.git
+[submodule "foolscap-ghost-theme"]
+	path = foolscap-ghost-theme
+	url = https://github.com/foolscapcon/foolscap-ghost-theme.git
