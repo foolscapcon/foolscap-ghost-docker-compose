@@ -5,15 +5,25 @@ foolscap-ghost: &foolscap-ghost
     - 2368:2368
   environment:
     NODE_ENV: development    
-    VIRTUAL_HOST: http://doubeal-mb.local
+    VIRTUAL_HOST: http://192.168.99.100
     VIRTUAL_PORT: 2368
     GHOST_CONTENT: /var/lib/ghost
     GHOST_SOURCE: /usr/src/ghost
     GHOST_SOURCE_CONTENT: /usr/src/ghost-content
+    DOCKER_GHOST: /usr/src/docker-ghost
+    GHOST_CONFIG_JS: /usr/src/docker-ghost/config.js
   volumes:
-    - ./content/:/usr/src/ghost-content/:ro
-    - ./content/themes/casper:/var/lib/ghost/themes/casper:ro
-    - ./content/themes/foolscap-ghost-theme:/var/lib/ghost/themes/foolscap-ghost-theme:ro
+    - /var/lib/ghost
+    - ./content/data:/var/lib/ghost/data:rw
+    - /var/lib/ghost/apps
+    - /var/lib/ghost/images
+    - /var/lib/ghost/themes
+    - ./casper:/var/lib/ghost/themes/casper:ro
+    - ./foolscap-ghost-theme:/var/lib/ghost/themes/foolscap-ghost-theme:ro
+    - ./content/:/usr/src/ghost-content/:ro    
+    - ./docker-ghost:/usr/src/docker-ghost:ro        
+    - ./:/usr/src/foolscap-ghost-docker-compose:ro
+
 
 
 

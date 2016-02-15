@@ -7,3 +7,6 @@
 [submodule "foolscap-ghost-theme"]
 	path = foolscap-ghost-theme
 	url = https://github.com/foolscapcon/foolscap-ghost-theme.git
+[submodule "casper"]
+	path = casper
+	url = https://github.com/TryGhost/Casper.git
